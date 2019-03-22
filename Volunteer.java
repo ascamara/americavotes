@@ -84,6 +84,14 @@ public class Volunteer {
         
     }
     
-    //GET METHODS!
-	
+    public String toString() {
+    	
+    	String name = "Name: "+firstName+" "+middleInitial+""+"lastName";
+    	String ageOfVoter = "Date of Birth: "+dob;
+    	String canvasStr = "Canvasing?: "+canvasing;
+    	String phonebankStr = "Phonebanking?: "+phone;
+    	String vol = name+"\n"+ageOfVoter+"\n"+canvasStr+"\n"+phonebankStr;
+    	
+    	return vol;
+    }	
 }

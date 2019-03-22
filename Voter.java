@@ -24,7 +24,8 @@ public class Voter {
         }
         if(nameList.size() == 3){
             firstName = nameList.get(0);
-            middleInitial = nameList.get(1);
+            String miString = nameList.get(1);
+            middleInitial = miString.charAt(0);
             lastName = nameList.get(2);
         }
         
@@ -33,6 +34,18 @@ public class Voter {
         phoneNumber = phone;
         dateLastContacted = lastCtc;
         
+    }
+    
+    public String toString() {
+    	
+    	String name = "Name: "+firstName+" "+middleInitial+""+lastName;
+    	String ageOfVoter = "Age: "+age;
+    	String locationOfVoter = "Location: "+location;
+    	String phoneNumberOfVoter = "Phone: "+phoneNumber;
+    	String dateLastCtcOfVoter = "Date Last Contacted: "+dateLastContacted;
+    	String voter = name+"\n"+ageOfVoter+"\n"+locationOfVoter+"\n"+phoneNumberOfVoter+"\n"+dateLastCtcOfVoter;
+    	
+    	return voter;
     }
     
 }

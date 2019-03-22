@@ -75,6 +75,20 @@ public class menus {
 			}
 		});
 		btnNewButton_1.setBounds(10, 65, 155, 49);
+		
+		Button btnAssignVolunteers = formToolkit.createButton(shell, "Assign volunteers!", SWT.NONE);
+		btnAssignVolunteers.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				
+				//Divide voters by volunteers, assign each to each
+				
+				mi.matchup();
+				
+				
+			}
+		});
+		btnAssignVolunteers.setBounds(285, 197, 139, 49);
 
 	}
 }
