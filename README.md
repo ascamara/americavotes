@@ -1,6 +1,6 @@
 # michiganvotes
 
-A project for the Tuesday Company's Software Engineering Internship 
+A project for the Tuesday Company's Software Engineering Internship application process
 
 ## How to run:
 
