@@ -19,6 +19,7 @@ public class MakeVolunteer extends Dialog {
 	private Volunteer v;
 	private boolean canv;
 	private boolean call; 
+	private Text txtNo;
 
 	/**
 	 * Create the dialog.
@@ -66,7 +67,7 @@ public class MakeVolunteer extends Dialog {
 		
 		Label lblMiddleInitial = new Label(shlMakeAVolunteer, SWT.NONE);
 		lblMiddleInitial.setBounds(153, 10, 100, 21);
-		lblMiddleInitial.setText("Middle Initial");
+		lblMiddleInitial.setText("Middle Initial*");
 		
 		text_1 = new Text(shlMakeAVolunteer, SWT.BORDER);
 		text_1.setBounds(174, 37, 43, 24);
@@ -89,7 +90,7 @@ public class MakeVolunteer extends Dialog {
 		btnIdLikeTo.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				call = true;
+				call = !call;
 			}
 		});
 		btnIdLikeTo.setBounds(10, 127, 207, 24);
@@ -99,7 +100,7 @@ public class MakeVolunteer extends Dialog {
 		btnCheckButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				canv = true;
+				canv = !canv;
 			}
 		});
 		btnCheckButton.setBounds(10, 153, 226, 24);
@@ -119,10 +120,19 @@ public class MakeVolunteer extends Dialog {
 				boolean canvas = canv;
 				
 				v = new Volunteer(fn, ln, mi, bday, phone, canvas);
+				shlMakeAVolunteer.dispose();
 			}
 		});
 		btnDone.setBounds(10, 233, 85, 26);
 		btnDone.setText("Done");
+		
+		txtNo = new Text(shlMakeAVolunteer, SWT.BORDER);
+		txtNo.setText("* - If none, press space once");
+		txtNo.setBounds(230, 233, 207, 24);
 
+	}
+	
+	public void shutdown() {
+		shlMakeAVolunteer.dispose();
 	}
 }

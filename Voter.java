@@ -1,4 +1,6 @@
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Voter {
 	
@@ -9,6 +11,10 @@ public class Voter {
     private String location;
     private String phoneNumber;
     private String dateLastContacted; //YYYYMMDD
+    
+    private String currentYear;
+    private String currentMonth;
+    private String currentDay;
     
     public Voter(String name, int a, String loc, String phone, String lastCtc){
         
@@ -36,6 +42,17 @@ public class Voter {
         
     }
     
+    public void dateLastContactedChanged() {
+    	Date date = new Date();
+    	String modifiedDate= new SimpleDateFormat("yyyy-MM-dd").format(date);
+    	
+    	currentYear = modifiedDate.substring(0,3);
+    	currentMonth = modifiedDate.substring(5,6);
+    	currentDay = modifiedDate.substring(8,9);
+    	
+    	dateLastContacted = currentYear+currentMonth+currentDay;
+    }
+    
     public String toString() {
     	
     	String name = "Name: "+firstName+" "+middleInitial+""+lastName;
@@ -43,7 +60,7 @@ public class Voter {
     	String locationOfVoter = "Location: "+location;
     	String phoneNumberOfVoter = "Phone: "+phoneNumber;
     	String dateLastCtcOfVoter = "Date Last Contacted: "+dateLastContacted;
-    	String voter = name+"\n"+ageOfVoter+"\n"+locationOfVoter+"\n"+phoneNumberOfVoter+"\n"+dateLastCtcOfVoter;
+    	String voter = name+" | "+ageOfVoter+" | "+locationOfVoter+" | "+phoneNumberOfVoter+" | "+dateLastCtcOfVoter;
     	
     	return voter;
     }

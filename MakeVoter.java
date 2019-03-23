@@ -110,4 +110,8 @@ public class MakeVoter extends Dialog {
 		btnDone.setText("Done");
 
 	}
+	
+	public void shutdown() {
+		shlCreateAVoter.dispose();
+	}
 }
