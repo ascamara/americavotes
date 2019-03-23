@@ -10,7 +10,6 @@ import org.eclipse.swt.events.SelectionEvent;
 
 public class MakeVoter extends Dialog {
 
-	protected Object result;
 	protected Shell shlCreateAVoter;
 	private Text text;
 	private Text text_1;
@@ -104,8 +103,7 @@ public class MakeVoter extends Dialog {
 				String dateLC = text_4.getText();
 				
 				v = new Voter(name, age, location, phone, dateLC);
-				
-				
+				shlCreateAVoter.dispose();
 			}
 		});
 		btnDone.setBounds(381, 276, 85, 26);

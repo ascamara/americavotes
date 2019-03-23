@@ -1,27 +1,35 @@
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Button;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.eclipse.ui.forms.widgets.Form;
 
 public class menus {
 
 	protected Shell shell;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
-	MichiganVote mi;
-
+	ArrayList<Volunteer> allVols = new ArrayList<>();
+	ArrayList<Voter> allVoters = new ArrayList<>();
+	
+	
+	
 	/**
 	 * Launch the application.
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		try {
+			
 			menus window = new menus();
 			window.open();
-			MichiganVote mi = new MichiganVote();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -40,7 +48,7 @@ public class menus {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
-		}
+		} 
 	}
 
 	/**
@@ -56,9 +64,10 @@ public class menus {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				
-				MakeVoter boxVots = new MakeVoter(shell, 1);
-				mi.allVoters.add(boxVots.open());
-				
+				MakeVoter boxVots = new MakeVoter(shell, 0);				
+				Voter v = boxVots.open();
+				allVoters.add(v);
+								
 			}
 		});
 		btnNewButton.setBounds(10, 10, 139, 49);
@@ -69,8 +78,9 @@ public class menus {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				
-				MakeVolunteer boxVols = new MakeVolunteer(shell, 1);
-				mi.allVols.add(boxVols.open());
+				MakeVolunteer boxVols = new MakeVolunteer(shell, 0);
+				Volunteer v = boxVols.open();
+				allVols.add(v);
 				
 			}
 		});
@@ -83,12 +93,21 @@ public class menus {
 				
 				//Divide voters by volunteers, assign each to each
 				
-				mi.matchup();
+				
+				matchup();
 				
 				
 			}
 		});
 		btnAssignVolunteers.setBounds(285, 197, 139, 49);
 
+	}
+	
+	private void matchup() {
+		
+		
+		
+		
+		
 	}
 }

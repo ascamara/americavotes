@@ -111,7 +111,8 @@ public class MakeVolunteer extends Dialog {
 			public void widgetSelected(SelectionEvent e) {
 				
 				String fn = text.getText();
-				Char mi = text_1.getText(); //fix
+				String miString = text_1.getText();
+				char mi = miString.charAt(0);
 				String ln = text_2.getText();
 				String bday = text_3.getText();
 				boolean phone = call;

@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 public class MichiganVote {
 	
-	public ArrayList<Volunteer> allVols;
-	public ArrayList<Voter> allVoters;
+	ArrayList<Volunteer> allVols;
+	ArrayList<Voter> allVoters;
 	
 	public MichiganVote() {
 		
@@ -15,16 +15,9 @@ public class MichiganVote {
 	public void matchup() {
 		
 		PrintWriter writer;
-		try {
-			writer = new PrintWriter("vols", "UTF-8");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		writer = new PrintWriter("vols", "UTF-8");
 		writer.println(allVols.get(0));
+		writer.close();
 		
 	}
 
