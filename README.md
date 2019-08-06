@@ -1,6 +1,6 @@
 # michiganvotes
 
-A project for the Tuesday Company's Software Engineering Internship application process
+A project for the helping campaigns organize their volunteers and match them with perspective voters!
 
 ## How to run:
 
