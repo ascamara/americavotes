@@ -1,4 +1,4 @@
-# michiganvotes
+# americavotes
 
 A project for the helping campaigns organize their volunteers and match them with perspective voters!
 
